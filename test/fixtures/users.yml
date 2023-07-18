@@ -4,12 +4,10 @@ one:
   name: MyString
   email: MyString
   phone: 1
-  passoword: MyString
   role: 1
 
 two:
   name: MyString
   email: MyString
   phone: 1
-  passoword: MyString
   role: 1

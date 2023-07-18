@@ -1,8 +1,11 @@
 class User < ApplicationRecord
-    has_many :propertys, dependent: :destroy
+    has_secure_password
+    
+    has_many :properties, dependent: :destroy
 
-    validates :name, presence: true
-    validates :email, presence: true, uniqueness: true
-    validates :phone, presence: true
-    validates :password, presence: true
+     validates :email, uniqueness: true,
+                    presence: true,
+                    format: { with: URI::MailTo::EMAIL_REGEXP, message: "is invalid" }
+
+  validates :name, :phone, :role, presence: true, on: :update
 end
